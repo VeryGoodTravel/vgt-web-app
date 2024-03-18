@@ -1,0 +1,15 @@
+# build stage
+FROM node:lts-alpine as build-stage
+WORKDIR /app
+COPY package*.json ./
+RUN yarn install
+COPY . .
+RUN yarn build --mode production
+
+# production stage
+FROM nginx:stable-alpine as production-stage
+COPY --from=build-stage /app/dist /usr/share/nginx/html
+COPY ./entrypoint.sh /entrypoint.sh
+EXPOSE 80
+RUN chmod +x /entrypoint.sh
+ENTRYPOINT [ "sh", "/entrypoint.sh" ]
