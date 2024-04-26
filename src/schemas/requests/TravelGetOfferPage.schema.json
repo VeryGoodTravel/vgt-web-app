@@ -1,0 +1,47 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "TravelGetOfferPage.schema.json",
+  "title": "TravelGetOfferPage",
+  "description": "Request to get a page of offers based on filters.",
+  "type": "object",
+  "properties": {
+    "origin_ids": {
+      "description": "If none provided, it means 'any'.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "destination_ids": {
+      "description": "If none provided, it means 'any'.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "dates": {
+      "$ref": "TravelDateRange.schema.json"
+    },
+    "participants": {
+      "description": "Participant type with count 0 won't be included in the request.",
+      "type": "object",
+      "patternProperties": {
+        "^.+$": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "page": {
+      "type": "integer",
+      "minimum": 1
+    }
+  },
+  "required": [
+    "origin_ids",
+    "destination_ids",
+    "dates",
+    "participants",
+    "page"
+  ]
+}

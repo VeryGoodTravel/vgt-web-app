@@ -1,17 +1,38 @@
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: () => import('@/containers/Home'),
+    name: 'Start',
+    component: () => import('@/containers/Start'),
+    production: true,
   },
   {
-    path: '/about',
-    name: 'About',
-    component: () => import('@/containers/About'),
+    path: '/offers',
+    name: 'Offers',
+    component: () => import('@/containers/Offers'),
+    production: true,
+  },
+  {
+    path: '/details',
+    name: 'Details',
+    component: () => import('@/containers/Details'),
+    production: true,
+  },
+  {
+    path: '/login',
+    name: 'Login',
+    component: () => import('@/containers/Login'),
+    production: true,
+  },
+  {
+    path: '/debug',
+    name: 'Debug',
+    component: () => import('@/containers/Debug'),
+    production: false,
   },
   {
     path: '/:catchAll(.*)',
     redirect: '/',
+    production: true,
   },
 ];
 

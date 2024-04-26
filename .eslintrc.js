@@ -22,11 +22,12 @@ module.exports = {
     'html',
   ],
   rules: {
+    'global-require': 'off',
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-param-reassign': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'vue/multi-word-component-names': 'off',
-    'vue/script-indent': ['error', 2, { baseIndent: 1 }],
+    'vue/script-indent': ['error', 2, { baseIndent: 0 }],
     'import/extensions': ['error', 'always', {
       js: 'never',
       vue: 'never',

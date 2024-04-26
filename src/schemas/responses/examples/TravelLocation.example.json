@@ -1,0 +1,14 @@
+{
+  "id": "1",
+  "label": "Polska",
+  "locations": [
+    {
+      "id": "2",
+      "label": "Warszawa"
+    },
+    {
+      "id": "6",
+      "label": "Gdańsk"
+    }
+  ]
+}
