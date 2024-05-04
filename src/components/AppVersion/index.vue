@@ -1,5 +1,5 @@
 <template>
-  <h6 class="AppVersion">{{ title }} {{ version }}</h6>
+  <h6 class="AppVersion">{{ getAppTitle }} {{ version }}</h6>
 </template>
 
 <script src="./component.js"></script>

@@ -1,11 +1,13 @@
-import LoginRequest from './LoginRequest.schema.json';
-import TravelGetOfferDetails from './TravelGetOfferDetails.schema.json';
-import TravelGetOfferPage from './TravelGetOfferPage.schema.json';
-import TravelPurchaseOffer from './TravelPurchaseOffer.schema.json';
+import Login from './Login.schema.json';
+import GetOfferDetails from './GetOfferDetails.schema.json';
+import GetOfferPage from './GetOfferPage.schema.json';
+import PurchaseOffer from './PurchaseOffer.schema.json';
+import examples from './examples';
 
 export default {
-  LoginRequest,
-  TravelGetOfferDetails,
-  TravelGetOfferPage,
-  TravelPurchaseOffer,
+  Login,
+  GetOfferDetails,
+  GetOfferPage,
+  PurchaseOffer,
+  examples,
 };

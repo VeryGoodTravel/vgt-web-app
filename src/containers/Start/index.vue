@@ -4,10 +4,10 @@
       <div class="Start__title-logo">
         <img class="Start__title-logo--image" :src="logo" />
       </div>
-      <h1 class="Start__title-text">{{ title }}</h1>
+      <h1 class="Start__title-text">{{ getAppTitle }}</h1>
     </div>
     <div class="Start__search-bar">
-      <FilterSearchBar />
+      <FilterSearchBar :filterData="getFilterData" v-if="getFilterData"/>
     </div>
   </div>
 </template>

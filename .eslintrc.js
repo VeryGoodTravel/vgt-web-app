@@ -23,6 +23,12 @@ module.exports = {
   ],
   rules: {
     'global-require': 'off',
+    'no-else-return': 'off',
+    'no-confusing-arrow': 'off',
+    'quote-props': 'off',
+    'object-curly-newline': ['error', { 'ImportDeclaration': 'never', 'ExportDeclaration': 'never' }],
+    'max-len': ['error', { 'code': 128 }],
+    'no-unused-vars': ['error', { 'argsIgnorePattern': '^_$' }],
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-param-reassign': process.env.NODE_ENV === 'production' ? 'warn' : 'off',

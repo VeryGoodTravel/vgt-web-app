@@ -1,0 +1,4 @@
+export default {
+  SET_PAGE_DATA: 'SET_PAGE_DATA',
+  SET_PAGES_DATA: 'SET_PAGES_DATA',
+};

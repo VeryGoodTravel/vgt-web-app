@@ -1,21 +1,15 @@
-import LoginResponse from './LoginResponse.schema.json';
-import TravelDateRange from './TravelDateRange.schema.json';
-import TravelFilters from './TravelFilters.schema.json';
-import TravelImage from './TravelImage.schema.json';
-import TravelLocation from './TravelLocation.schema.json';
-import TravelOffer from './TravelOffer.schema.json';
-import TravelOfferDetails from './TravelOfferDetails.schema.json';
-import TravelOfferPage from './TravelOfferPage.schema.json';
-import TravelPurchaseOfferStatus from './TravelPurchaseOfferStatus.schema.json';
+import GetFilters from './GetFilters.schema.json';
+import GetOfferDetails from './GetOfferDetails.schema.json';
+import GetOfferPage from './GetOfferPage.schema.json';
+import Login from './Login.schema.json';
+import PurchaseOffer from './PurchaseOffer.schema.json';
+import examples from './examples';
 
 export default {
-  LoginResponse,
-  TravelDateRange,
-  TravelFilters,
-  TravelImage,
-  TravelLocation,
-  TravelOffer,
-  TravelOfferDetails, // todo
-  TravelOfferPage,
-  TravelPurchaseOfferStatus, // todo
+  GetFilters,
+  GetOfferDetails, // todo
+  GetOfferPage,
+  Login,
+  PurchaseOffer, // todo
+  examples,
 };

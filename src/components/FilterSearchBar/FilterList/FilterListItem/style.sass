@@ -1,0 +1,40 @@
+$SIZE: 1.75rem
+$GAP: 0.25rem
+
+.FilterListItem
+    width: 100%
+    font-weight: 600
+    font-size: $SIZE
+    line-height: $SIZE
+    margin: $GAP 0
+    padding-left: $GAP
+
+    &[open] > &__item > &__item--chevron
+        transform: rotate(90deg)
+
+    &__item
+        display: flex
+        flex-direction: row
+        align-items: center
+        gap: $GAP
+
+        &:not(:only-child)
+            cursor: pointer
+
+        &--checkbox
+            width: $SIZE
+            height: $SIZE
+            accent-color: $color__light--1
+            cursor: pointer
+
+        &--label
+
+        &--chevron
+            box-sizing: border-box
+            width: $SIZE
+            height: $SIZE
+            padding: $GAP
+            filter: hue-rotate(240), saturate(5%)
+
+    &__sublist
+        margin-left: calc( $SIZE + $GAP )

@@ -1,3 +1,5 @@
+// DEFAULT PAGE STYLE
+
 html, body
     box-sizing: border-box
     width: 100%
@@ -21,3 +23,39 @@ body
     min-height: 100%
     display: flex
     flex-direction: column
+
+// CUSTOM SCROLLBAR
+
+::-webkit-scrollbar
+    width: 0.5rem
+
+::-webkit-scrollbar-thumb
+    background: $color__light--1
+
+::-webkit-scrollbar-thumb:hover
+    background: $color__light--1
+
+// V-CALENDAR STYLE OVERRIDE
+
+button[class^=vc]
+    background: none
+    color: $color__light--1
+
+.vc-title > span
+    text-transform: capitalize
+
+// GLOBAL HOVER STYLE
+
+.hover:hover
+    cursor: pointer
+    filter: brightness(80%)
+
+// GLOBAL DISABLED STYLE
+
+*:disabled
+    cursor: default
+    filter: brightness(50%)
+
+    &:hover
+        filter: brightness(50%)
+        cursor: default

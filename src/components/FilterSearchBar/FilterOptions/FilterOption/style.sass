@@ -1,0 +1,58 @@
+$SIZE: 1.5rem
+$GAP: 0.25rem
+
+.FilterOption
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    align-items: center
+    width: 100%
+
+    &__label
+        height: $SIZE
+        font-size: $SIZE
+        line-height: $SIZE
+        font-weight: 600
+
+    &__bar
+        display: flex
+        flex-direction: row
+        justify-content: center
+        height: $SIZE
+
+        &--button
+            box-sizing: border-box
+            width: $SIZE
+            height: $SIZE
+            padding: 0
+            margin: 0
+            font-size: 1.25rem
+            line-height: 0.8rem
+            font-weight: 800
+            background: none
+            color: $color__light--1
+            border: 0.2rem solid $color__light--1
+            border-radius: $SIZE
+
+        &--input
+            padding: 0
+            margin: 0
+            text-align: center
+            font-size: 1.5rem
+            line-height: 1.5rem
+            font-weight: 600
+            color: $color__light--1
+            background: none
+            border: none
+            cursor: default
+
+            &:focus
+                outline: none
+
+            &::-webkit-outer-spin-button
+                -webkit-appearance: none
+                margin: 0
+
+            &::-webkit-inner-spin-button
+                -webkit-appearance: none
+                margin: 0

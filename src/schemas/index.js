@@ -1,9 +1,11 @@
-import responses from './responses';
+import common from './common';
+import envelope from './envelope';
 import requests from './requests';
-import envelope from './Envelope.schema.json';
+import responses from './responses';
 
 export default {
-  responses,
-  requests,
+  common,
   envelope,
+  requests,
+  responses,
 };
