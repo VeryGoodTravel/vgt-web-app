@@ -1,7 +1,5 @@
-import { mapGetters } from 'vuex';
-
 export default {
-  name: 'PageSpinner',
+  name: 'Spinner',
   data() {
     return {
       timer: null,
@@ -9,7 +7,6 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(['getLoadingMessage']),
     logoV() {
       return require('@/assets/logo-v.svg');
     },

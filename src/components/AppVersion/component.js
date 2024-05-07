@@ -2,9 +2,6 @@ import { mapGetters } from 'vuex';
 
 export default {
   name: 'AppVersion',
-  data() {
-    return {};
-  },
   computed: {
     ...mapGetters(['getAppTitle']),
     version() {

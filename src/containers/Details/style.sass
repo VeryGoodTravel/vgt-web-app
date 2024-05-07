@@ -1,0 +1,148 @@
+.Details
+    flex-grow: 1
+    display: flex
+    flex-direction: column
+
+    &__nav
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        align-items: center
+        width: 100%
+        height: 3rem
+        padding: 2rem 0
+
+        &--button
+            width: 3rem
+            height: 3rem
+            margin: 0
+            padding: 0
+            border-radius: 3rem
+            font-size: 2.25rem
+            line-height: 2.25rem
+            padding-bottom: 0.1rem
+            color: $color__light--1
+            background: none
+            border: 0.2rem solid $color__light--1
+            transform: scaleX(-1)
+
+    &__content
+        flex-grow: 1
+        display: grid
+        grid-template-columns: 2fr minmax(1fr, min-content)
+        grid-template-rows: 1fr
+        grid-template-areas: "details summary"
+        padding: 0 10%
+        column-gap: 2rem
+
+        &--offer
+            position: relative
+            display: flex
+            flex-direction: column
+            justify-content: flex-start
+            align-items: center
+            gap: 0.5rem
+            width: 100%
+            height: max-content
+
+            &-row
+                display: flex
+                flex-direction: row
+                align-items: center
+                width: 100%
+
+                &-title
+                    font-size: 2.5rem
+                    line-height: 2.5rem
+                    font-weight: 600
+
+                &-header
+                    height: 2rem
+                    font-size: 2rem
+                    line-height: 2rem
+
+                &-detail
+                    white-space: nowrap
+                    height: 2rem
+                    font-size: 2rem
+                    line-height: 2rem
+                    padding-left: 1rem
+                    text-transform: capitalize
+
+                    & > img
+                        display: inline
+                        vertical-align: bottom
+                        height: 100%
+                        aspect-ratio: 1 / 1
+                        filter: invert(1) brightness(0.95)
+
+                & > img
+                    width: 80%
+
+        &--summary
+            box-sizing: border-box
+            position: relative
+            display: flex
+            flex-direction: column
+            justify-content: flex-start
+            align-items: center
+            width: 100%
+            height: max-content
+            padding: 1rem
+            border: 0.4rem solid $color__light--1
+            border-radius: 0.8rem
+
+            &-row
+                display: flex
+                flex-direction: row
+                align-items: center
+                width: 100%
+
+                &-place
+                    font-size: 1.5rem
+                    line-height: 1.5rem
+                    font-weight: 800
+                    margin-bottom: 0.5rem
+                    white-space: nowrap
+
+                &-date
+                    font-size: 1rem
+                    line-height: 1rem
+                    font-weight: 600
+                    white-space: nowrap
+
+                &-duration
+                    font-style: italic
+                    filter: brightness(0.75)
+                    white-space: nowrap
+
+                &-spacer
+                    height: 4rem
+
+                &-header
+                    font-size: 1.25rem
+                    line-height: 1.25rem
+
+                &-price
+                    font-size: 1.75rem
+                    line-height: 1.75rem
+                    font-weight: 600
+
+                &-button
+                    width: 100%
+                    height: 2.5rem
+                    border: none
+                    border-radius: 0.5rem
+                    background-color: $color__light--1
+                    color: $color__dark--1
+                    font-size: 1.5rem
+                    line-height: 1.5rem
+                    font-weight: 800
+                    margin-top: 0.75rem
+                    padding: 0.5rem 1rem
+
+.space-between
+    justify-content: space-between
+
+.center
+    justify-content: center

@@ -4,7 +4,6 @@ import endpoints from './endpoints';
 
 export default async (requestData) => {
   if (!validators.requests.GetOfferPage.isValid(requestData)) {
-    console.log(validators.requests.GetOfferPage.validate(requestData));
     throw Error('Error sending GetOfferPage request - invalid request schema');
   }
 

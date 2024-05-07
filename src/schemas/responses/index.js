@@ -7,9 +7,9 @@ import examples from './examples';
 
 export default {
   GetFilters,
-  GetOfferDetails, // todo
+  GetOfferDetails,
   GetOfferPage,
   Login,
-  PurchaseOffer, // todo
+  PurchaseOffer,
   examples,
 };

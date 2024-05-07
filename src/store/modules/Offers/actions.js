@@ -1,6 +1,5 @@
 import api from '@/api';
 
-import initialState from './state';
 import types from './mutation-types';
 
 export default {
@@ -14,6 +13,14 @@ export default {
     commit(types.SET_PAGE_DATA, { 'page': page, 'data': response });
   },
   clearAllPagesData({ commit }) {
-    commit(types.SET_PAGES_DATA, initialState.pagesData);
+    commit(types.SET_PAGES_DATA, {});
+  },
+  async fetchOfferDetails({ commit }, id) {
+    const requestData = { offer_id: id };
+    const response = await api.GetOfferDetails(requestData);
+    commit(types.SET_OFFER_DETAILS, { 'id': id, 'data': response });
+  },
+  clearAllOffersDetails({ commit }) {
+    commit(types.SET_OFFERS_DETAILS, {});
   },
 };

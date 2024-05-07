@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "/schemas/common/TravelOffer.schema.json",
   "title": "TravelOffer",
-  "description": "Describes single tour offer including its availability.",
+  "description": "Describes single tour offer.",
   "type": "object",
   "properties": {
     "id": {
@@ -21,7 +21,7 @@
       "$ref": "/schemas/common/TravelDateRange.schema.json"
     },
     "price": {
-      "$comment": "Price for entire offer, not per person",
+      "description": "Price for entire offer, not per person",
       "type": "object",
       "properties": {
         "value": {
@@ -37,12 +37,17 @@
         "currency"
       ]
     },
-    "availability": {
-      "$comment": "If not provided, defaults to false",
-      "type": "boolean"
+    "room": {
+      "type": "string"
+    },
+    "transportation": {
+      "type": "string"
+    },
+    "maintenance": {
+      "type": "string"
     },
     "rating": {
-      "$comment": "If not provided, defaults to 0.0",
+      "description": "If not provided, defaults to 0.0",
       "type": "number",
       "minimum": 0.0,
       "maximum": 5.0

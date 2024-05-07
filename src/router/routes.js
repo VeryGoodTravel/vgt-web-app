@@ -6,13 +6,13 @@ const routes = [
     production: true,
   },
   {
-    path: '/offers',
+    path: '/offers/:page',
     name: 'Offers',
     component: () => import('@/containers/Offers'),
     production: true,
   },
   {
-    path: '/details',
+    path: '/details/:id',
     name: 'Details',
     component: () => import('@/containers/Details'),
     production: true,

@@ -18,6 +18,11 @@ export default {
         return acc;
       }, {});
     },
+    clearOptionsValues() {
+      this.$refs.options.forEach((option) => {
+        option.clearOptionValue();
+      });
+    },
   },
   mounted() {
     this.emitOptionsUpdate();

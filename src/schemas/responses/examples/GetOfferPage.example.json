@@ -1,7 +1,6 @@
 {
   "pages": {
-    "total": 1,
-    "size": 8,
+    "total": 3,
     "page": 1
   },
   "offers": [
@@ -24,8 +23,10 @@
         "value": 300.0,
         "currency": "zł"
       },
+      "room": "Studio standard",
+      "transportation": "Samolot",
+      "maintenance": "All Inclusive",
       "rating": 4.4,
-      "availability": true,
       "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAIAQMAAAD+wSzIAAAABlBMVEX///+/v7+jQ3Y5AAAADklEQVQI12P4AIX8EAgALgAD/aNpbtEAAAAASUVORK5CYII"
     }
   ]

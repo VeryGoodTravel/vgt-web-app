@@ -53,5 +53,13 @@ export default {
         return this.$refs.checkbox.checked ? { id: this.item.id, label: this.item.label } : null;
       }
     },
+    clearItemValue() {
+      if (this.item.locations) {
+        this.$refs.items.forEach((item) => {
+          item.clearItemValue();
+        });
+      }
+      this.$refs.checkbox.checked = false;
+    },
   },
 };

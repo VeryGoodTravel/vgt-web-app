@@ -3,33 +3,38 @@
     display: flex
     flex-direction: column
     justify-content: flex-start
+    align-items: center
 
     &__nav
         display: grid
-        grid-template-columns: 4rem 1fr 4rem
+        grid-template-columns: 1fr 4fr 1fr
         grid-template-rows: 1fr
-        grid-template-areas: "back pagination ."
-        height: 4rem
+        grid-template-areas: "back pagination login"
+        width: 100%
+        height: 3rem
         padding: 2rem 0
 
         &--button
             grid-area: back
-            width: 4rem
-            height: 4rem
+            align-self: center
+            width: 3rem
+            height: 3rem
             margin: 0
             padding: 0
-            border-radius: 4rem
-            font-weight: 600
-            font-size: 2.75rem
-            line-height: 2.75rem
-            padding-left: 0.2rem
+            border-radius: 3rem
+            font-size: 2.25rem
+            line-height: 2.25rem
+            padding-bottom: 0.1rem
             color: $color__light--1
             background: none
-            border: 0.4rem solid $color__light--1
+            border: 0.2rem solid $color__light--1
             transform: scaleX(-1)
 
         &--pagination
             grid-area: pagination
+
+        &--login
+            grid-area: login
 
     &__list
         flex-grow: 1
@@ -37,4 +42,6 @@
         flex-direction: column
         justify-content: flex-start
         align-items: center
-        width: 100%
+        gap: 2rem
+        width: max-content
+        max-width: 100%

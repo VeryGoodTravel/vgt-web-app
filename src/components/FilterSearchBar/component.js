@@ -37,6 +37,9 @@ export default {
     };
   },
   computed: {
+    resetIcon() {
+      return require('@/assets/reset.svg');
+    },
     searchIcon() {
       return require('@/assets/search.svg');
     },
@@ -99,7 +102,7 @@ export default {
     },
   },
   methods: {
-    ...mapActions(['setSearchFilter']),
+    ...mapActions(['setSearchFilter', 'clearSearchFilter']),
     clickDestination() {
       this.showDestinationMenu = !this.showDestinationMenu;
       this.showDateMenu = false;
@@ -124,6 +127,19 @@ export default {
       this.showOriginMenu = false;
       this.showParticipantsMenu = !this.showParticipantsMenu;
     },
+    clickReset() {
+      this.date = {
+        start: DateTime.fromFormat(filter.dates.start, 'dd-MM-yyyy'),
+        end: DateTime.fromFormat(filter.dates.start, 'dd-MM-yyyy').plus({ days: 3 }),
+      };
+      this.$refs.origin.clearListValues();
+      this.onOriginsUpdated();
+      this.$refs.destination.clearListValues();
+      this.onDestinationUpdated();
+      this.$refs.participant.clearOptionsValues();
+      this.participants = this.$refs.participant.getOptionsValues();
+      this.clearSearchFilter();
+    },
     clickSearch() {
       this.setSearchFilter({
         destinations: this.destination,
@@ -132,10 +148,9 @@ export default {
           end: this.date.end.toFormat('dd-MM-yyyy'),
         },
         origins: this.origin,
-        participants: Object.fromEntries(Object.entries(this.participants).filter((key, value) => value < 1)),
-        page: 1,
+        participants: Object.fromEntries(Object.entries(this.participants).filter(([_, value]) => value)),
       });
-      this.$router.push({ path: 'offers' });
+      this.$router.push({ name: 'Offers', params: { page: 1 } });
     },
     onDestinationUpdated() {
       const destinations = this.$refs.destination.getListValues();

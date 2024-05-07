@@ -1,6 +1,5 @@
 import api from '@/api';
 
-import initialState from './state';
 import types from './mutation-types';
 
 export default {
@@ -23,16 +22,16 @@ export default {
     commit(types.SET_PARTICIPANTS, filter.participants);
   },
   clearSearchFilter({ commit }) {
-    commit(types.SET_DESTINATIONS, initialState.destinations);
-    commit(types.SET_DATES, initialState.dates);
-    commit(types.SET_ORIGINS, initialState.origins);
-    commit(types.SET_PARTICIPANTS, initialState.participants);
+    commit(types.SET_DESTINATIONS, []);
+    commit(types.SET_DATES, { start: '', end: '' });
+    commit(types.SET_ORIGINS, []);
+    commit(types.SET_PARTICIPANTS, {});
   },
   async fetchFilterData({ commit }) {
     const response = await api.GetFilters();
     commit(types.SET_FILTER_DATA, response);
   },
   clearFilterData({ commit }) {
-    commit(types.SET_FILTER_DATA, initialState.filterData);
+    commit(types.SET_FILTER_DATA, null);
   },
 };

@@ -1,0 +1,93 @@
+.OfferCard
+    box-sizing: border-box
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    width: 100%
+    height: 13rem
+    font-size: 1.5rem
+    line-height: 1.5rem
+    padding: 1rem
+    border: 0.2rem solid $color__light--1
+    border-radius: 0.8rem
+
+    &__image
+        height: 100%
+        padding-right: 1rem
+
+    &__info
+        display: flex
+        flex-direction: column
+        justify-content: flex-start
+        gap: 1rem
+
+        &--header
+            display: flex
+            flex-direction: column
+            justify-content: flex-start
+            gap: 0.5rem
+
+            &-row
+                display: flex
+                flex-direction: row
+                justify-content: space-between
+                gap: 1rem
+
+                &-title
+                    white-space: nowrap
+                    font-weight: 600
+
+                &-combo
+                    display: flex
+                    flex-direction: row
+                    gap: 0.25rem
+                    font-size: 1.25rem
+                    line-height: 1.25rem
+                    font-style: italic
+
+                    &-arrow
+                        font-weight: 200
+
+        &--content
+            display: flex
+            flex-direction: row
+            justify-content: space-between
+            height: 100%
+
+            &-column
+                display: flex
+                flex-direction: column
+                justify-content: flex-end
+                align-items: flex-end
+                gap: 0.25rem
+
+                &:first-of-type
+                    justify-content: flex-start
+                    align-items: flex-start
+
+                &-detail
+                    height: 1.25rem
+                    font-size: 1.25rem
+                    line-height: 1.25rem
+
+                    & > img
+                        display: inline
+                        vertical-align: bottom
+                        height: 100%
+                        aspect-ratio: 1 / 1
+                        filter: invert(1) brightness(0.95)
+
+                &-price
+                    font-size: 2rem
+                    line-height: 2rem
+                    margin-block: 0.25rem
+
+                &-details
+                    background-color: $color__light--1
+                    color: $color__dark--1
+                    font-weight: 600
+                    font-size: 1.25rem
+                    line-height: 1.25rem
+                    padding: 0.5rem 0.5rem
+                    border: none
+                    border-radius: 0.4rem

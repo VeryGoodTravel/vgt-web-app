@@ -1,10 +1,12 @@
 import { mapGetters, mapActions } from 'vuex';
 
+import LoginBar from '@/components/LoginBar';
 import FilterSearchBar from '@/components/FilterSearchBar';
 
 export default {
   name: 'Start',
   components: {
+    LoginBar,
     FilterSearchBar,
   },
   computed: {

@@ -4,6 +4,17 @@
   "title": "PurchaseOffer",
   "description": "Describes data returned on successful offer purchase.",
   "type": "object",
-  "properties": {},
-  "required": []
+  "properties": {
+    "success": {
+      "description": "Information whether transaction was successful.",
+      "type": "boolean"
+    },
+    "message": {
+      "description": "Description why transaction failed.",
+      "type": "string"
+    }
+  },
+  "required": [
+    "success"
+  ]
 }

@@ -19,5 +19,10 @@ export default {
         return value ? acc.concat(value) : acc;
       }, []);
     },
+    clearListValues() {
+      this.$refs.items.forEach((item) => {
+        item.clearItemValue();
+      });
+    },
   },
 };

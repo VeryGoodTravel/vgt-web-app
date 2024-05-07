@@ -1,0 +1,33 @@
+.StarBar
+    position: relative
+    width: min-content
+    display: inline-flex
+    flex-direction: row
+    justify-content: flex-start
+    align-items: center
+    gap: 0.1rem
+
+    &__counter-overlay
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        background-color: black
+        mix-blend-mode: exclusion
+
+    &__star
+        color: $color__light--1
+        font-size: 1.5rem
+        line-height: 1.5rem
+        font-weight: 600
+        user-select: none
+
+    &__overlay
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        background-color: $color__gold
+        mix-blend-mode: darken

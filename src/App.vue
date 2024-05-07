@@ -1,6 +1,7 @@
 <template>
-  <PageSpinner v-if="getIsLoading" />
-  <router-view v-show="!getIsLoading" />
+  <LoadingScreen v-if="getIsLoading" />
+  <ModalScreen v-else-if="getIsModalOpen" />
+  <router-view v-show="!getIsLoading && !getIsModalOpen" />
   <AppVersion />
 </template>
 
@@ -9,16 +10,18 @@ import store from '@/store';
 import { mapGetters } from 'vuex';
 
 import AppVersion from '@/components/AppVersion';
-import PageSpinner from '@/components/PageSpinner';
+import LoadingScreen from '@/components/LoadingScreen';
+import ModalScreen from '@/components/ModalScreen';
 
 export default {
   name: 'App',
   components: {
     AppVersion,
-    PageSpinner,
+    LoadingScreen,
+    ModalScreen,
   },
   computed: {
-    ...mapGetters(['getIsLoading']),
+    ...mapGetters(['getIsLoading', 'getIsModalOpen']),
   },
   store,
 };

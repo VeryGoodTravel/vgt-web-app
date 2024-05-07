@@ -6,8 +6,8 @@ import PurchaseOffer from './PurchaseOffer.example.json';
 
 export default {
   GetFilters,
-  GetOfferDetails, // todo
+  GetOfferDetails,
   GetOfferPage,
   Login,
-  PurchaseOffer, // todo
+  PurchaseOffer,
 };

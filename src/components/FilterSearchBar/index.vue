@@ -28,6 +28,9 @@
         <FilterOptions :options="participantsFilterData" ref="participant" @optionsUpdate="onParticipantsUpdated" />
       </div>
     </div>
+    <div class="FilterSearchBar__reset">
+      <img class="FilterSearchBar__reset-image hover" :src="resetIcon" @click="clickReset" />
+    </div>
     <div class="FilterSearchBar__search">
       <img class="FilterSearchBar__search-image hover" :src="searchIcon" @click="clickSearch" />
     </div>

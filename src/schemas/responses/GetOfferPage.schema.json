@@ -14,11 +14,6 @@
           "type": "integer",
           "minimum": 0
         },
-        "size": {
-          "description": "Amount of offers per page",
-          "type": "integer",
-          "minimum": 0
-        },
         "page": {
           "description": "Page number",
           "type": "integer",
@@ -27,7 +22,6 @@
       },
       "required": [
         "total",
-        "size",
         "page"
       ]
     },

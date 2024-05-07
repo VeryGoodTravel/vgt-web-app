@@ -35,5 +35,8 @@ export default {
     getOptionValue() {
       return this.optionValue;
     },
+    clearOptionValue() {
+      this.optionValue = this.option.min;
+    },
   },
 };
