@@ -137,12 +137,12 @@ export default {
     },
     clickSearch() {
       this.setSearchFilter({
-        destinations: this.destination,
+        destinations: this.destination.map((d) => d.id),
         dates: {
           start: this.date.start.toFormat('dd-MM-yyyy'),
           end: this.date.end.toFormat('dd-MM-yyyy'),
         },
-        origins: this.origin,
+        origins: this.origin.map((o) => o.id),
         participants: Object.fromEntries(Object.entries(this.participants).filter(([_, value]) => value)),
       });
       this.$router.push({ name: 'Offers', params: { page: 1 } });
@@ -166,5 +166,8 @@ export default {
     onParticipantsUpdated() {
       this.participants = this.$refs.participant.getOptionsValues();
     },
+  },
+  beforeMount() {
+    this.clearSearchFilter();
   },
 };
