@@ -29,34 +29,52 @@
     },
     "participants": {
       "description": "Participants types based on their age.",
-      "type": "array",
-      "items": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "label": {
-            "type": "string"
-          },
-          "min": {
-            "type": "integer",
-            "minimum": 0
-          },
-          "max": {
-            "type": "integer",
-            "minimum": 0
-          }
+      "type": "object",
+      "properties": {
+        "min": {
+          "type": "integer",
+          "minimum": 0
         },
-        "required": [
-          "id",
-          "label",
-          "min",
-          "max"
-        ]
+        "max": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "options": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "label": {
+                "type": "string"
+              },
+              "min": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "max": {
+                "type": "integer",
+                "minimum": 0
+              }
+            },
+            "required": [
+              "id",
+              "label",
+              "min",
+              "max"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
       },
-      "minItems": 1,
-      "uniqueItems": true
+      "required": [
+        "min",
+        "max",
+        "options"
+      ]
     }
   },
   "required": [

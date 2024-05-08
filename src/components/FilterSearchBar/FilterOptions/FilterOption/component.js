@@ -6,6 +6,8 @@ export default {
   data() {
     return {
       optionValue: this.option.min,
+      disableMin: false,
+      disableMax: false,
     };
   },
   emits: ['optionUpdate'],
@@ -16,11 +18,11 @@ export default {
     value() {
       return this.optionValue;
     },
-    isMax() {
-      return this.optionValue >= this.option.max;
-    },
     isMin() {
-      return this.optionValue <= this.option.min;
+      return this.optionValue <= this.option.min || this.disableMin;
+    },
+    isMax() {
+      return this.optionValue >= this.option.max || this.disableMax;
     },
   },
   methods: {
@@ -37,6 +39,12 @@ export default {
     },
     clearOptionValue() {
       this.optionValue = this.option.min;
+    },
+    disableDecrement(value) {
+      this.disableMin = value;
+    },
+    disableIncrement(value) {
+      this.disableMax = value;
     },
   },
 };

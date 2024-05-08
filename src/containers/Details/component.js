@@ -1,6 +1,8 @@
 import { mapGetters, mapActions } from 'vuex';
 
 import api from '@/api';
+import errors from '@/api/errors';
+
 import LoginBar from '@/components/LoginBar';
 import StarBar from '@/components/OfferCard/StarBar';
 
@@ -112,8 +114,21 @@ export default {
   async beforeMount() {
     this.setLoadingMessage('Pobieranie szczegółów oferty...');
     this.setIsLoading(true);
-    await this.fetchOfferDetails(this.id);
-    this.setIsLoading(false);
-    this.clearLoadingMessage();
+    try {
+      await this.fetchOfferDetails(this.id);
+    } catch (error) {
+      if (error instanceof errors.SuccessFalseError) {
+        this.setModalComponentName('ErrorModal');
+        this.setModalComponentProps({ message: 'Nie znaleźliśmy takiej oferty.', back: true });
+        this.setIsModalOpen(true);
+      } else {
+        this.setModalComponentName('ErrorModal');
+        this.setModalComponentProps({ message: 'System jest chwilowy niedostępny.', retry: true });
+        this.setIsModalOpen(true);
+      }
+    } finally {
+      this.setIsLoading(false);
+      this.clearLoadingMessage();
+    }
   },
 };

@@ -25,7 +25,7 @@
       <div class="FilterSearchBar__filter-header">Z kim lecimy?</div>
       <div class="FilterSearchBar__filter-selection hover" @click="clickParticipants">{{ participantsSelection }}</div>
       <div class="FilterSearchBar__filter-menu" v-show="showParticipantsMenu">
-        <FilterOptions :options="participantsFilterData" ref="participant" @optionsUpdate="onParticipantsUpdated" />
+        <FilterOptions :participants="participantsFilterData" ref="participant" @optionsUpdate="onParticipantsUpdated" />
       </div>
     </div>
     <div class="FilterSearchBar__reset">

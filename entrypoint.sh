@@ -10,6 +10,7 @@ do
 
   sed -i "s|VUE_APP_API_URL_VALUE|$VUE_APP_API_URL|g" $file
   sed -i "s|VUE_APP_API_TIMEOUT_VALUE|$VUE_APP_API_TIMEOUT|g" $file
+  sed -i "s|VUE_APP_API_PURCHASE_TIMEOUT_VALUE|$VUE_APP_API_PURCHASE_TIMEOUT|g" $file
 done
 
 # start production application

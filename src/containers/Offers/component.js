@@ -1,5 +1,7 @@
 import { mapGetters, mapActions } from 'vuex';
 
+import errors from '@/api/errors';
+
 import LoginBar from '@/components/LoginBar';
 import PaginationBar from '@/components/PaginationBar';
 import OfferCard from '@/components/OfferCard';
@@ -40,7 +42,10 @@ export default {
     },
   },
   methods: {
-    ...mapActions(['fetchPageData', 'setIsLoading', 'setLoadingMessage', 'clearLoadingMessage']),
+    ...mapActions(['fetchPageData',
+      'setIsLoading', 'setLoadingMessage', 'clearLoadingMessage',
+      'setIsModalOpen', 'setModalComponentName', 'setModalComponentProps',
+    ]),
     clickBack() {
       this.$router.push({ name: 'Start' });
     },
@@ -48,8 +53,21 @@ export default {
   async beforeMount() {
     this.setLoadingMessage('Pobieranie ofert...');
     this.setIsLoading(true);
-    await this.fetchPageData({ page: this.page, searchFilter: this.getSearchFilter });
-    this.setIsLoading(false);
-    this.clearLoadingMessage();
+    try {
+      await this.fetchPageData({ page: this.page, searchFilter: this.getSearchFilter });
+    } catch (error) {
+      if (error instanceof errors.SuccessFalseError) {
+        this.setModalComponentName('ErrorModal');
+        this.setModalComponentProps({ message: 'Nie znaleźliśmy żadnych ofert spełniających kryteria.', back: true });
+        this.setIsModalOpen(true);
+      } else {
+        this.setModalComponentName('ErrorModal');
+        this.setModalComponentProps({ message: 'System jest chwilowy niedostępny.', retry: true });
+        this.setIsModalOpen(true);
+      }
+    } finally {
+      this.setIsLoading(false);
+      this.clearLoadingMessage();
+    }
   },
 };

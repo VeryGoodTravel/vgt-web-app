@@ -1,4 +1,5 @@
 import validators from '@/validators';
+import errors from './errors';
 
 const axios = require('axios').default;
 
@@ -8,9 +9,9 @@ export default axios.create({
   transformResponse: (data) => {
     const response = JSON.parse(data);
     if (!validators.envelope.isValid(response)) {
-      throw Error('Error parsing response - invalid envelope');
+      throw new errors.SchemaParsingError('Error parsing response envelope - invalid schema');
     } else if (!response.success) {
-      throw Error('Error parsing response - request failed');
+      throw new errors.SuccessFalseError('Error parsing response envelope - success false');
     } else {
       return response.data;
     }
@@ -20,4 +21,5 @@ export default axios.create({
   },
   responseType: 'json',
   responseEncoding: 'utf8',
+  validateStatus: (status) => status < 400, // throws AxiosError for http status 400 and 500
 });

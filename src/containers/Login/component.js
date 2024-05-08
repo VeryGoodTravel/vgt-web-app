@@ -1,5 +1,7 @@
 import { mapGetters, mapActions } from 'vuex';
 
+import errors from '@/api/errors';
+
 export default {
   name: 'Login',
   data() {
@@ -13,27 +15,33 @@ export default {
     ...mapGetters(['getToken', 'getLogin']),
   },
   methods: {
-    ...mapActions(['LogIn']),
+    ...mapActions(['LogIn', 'setIsModalOpen', 'setModalComponentName', 'setModalComponentProps']),
     clickBack() {
-      const previous = this.$router.options.history.state.back;
-      if (/^\/offers\/[0-9]+$/.test(previous) || /^\/details\/[a-zA-Z0-9-_]+$/.test(previous)) {
-        this.$router.back();
-      } else {
-        this.$router.push({ name: 'Start' });
-      }
+      this.$router.routeBack(this.$router);
     },
     async clickLogin() {
       if (/^[a-zA-Z][a-zA-Z0-9_]{4,14}$/.test(this.login) && /^[a-zA-Z][a-zA-Z0-9_]{7,24}$/.test(this.password)) {
         this.alertMessage = '';
-        await this.LogIn({ 'login': this.login, 'password': this.password });
-
-        const previous = this.$router.options.history.state.back;
-        if (/^\/offers\/[0-9]+$/.test(previous) || /^\/details\/[a-zA-Z0-9-_]+$/.test(previous)) {
-          this.$router.back();
-        } else {
-          this.$router.push({ name: 'Start' });
+        try {
+          await this.LogIn({ 'login': this.login, 'password': this.password });
+        } catch (error) {
+          if (error instanceof errors.SuccessFalseError) {
+            this.login = '';
+            this.password = '';
+            this.alertMessage = 'Nieprawidłowy login lub hasło';
+          } else {
+            this.setModalComponentName('ErrorModal');
+            this.setModalComponentProps({ message: 'System jest chwilowy niedostępny.', retry: true });
+            this.setIsModalOpen(true);
+            this.login = '';
+            this.password = '';
+          }
+          return;
         }
+        this.$router.routeBack(this.$router);
       } else {
+        this.login = '';
+        this.password = '';
         this.alertMessage = 'Nieprawidłowy login lub hasło';
       }
     },

@@ -1,10 +1,11 @@
 import validators from '@/validators';
 import api from './api';
 import endpoints from './endpoints';
+import errors from './errors';
 
 export default async (requestData) => {
   if (!validators.requests.GetOfferPage.isValid(requestData)) {
-    throw Error('Error sending GetOfferPage request - invalid request schema');
+    throw new errors.SchemaParsingError('Error sending GetOfferPage request - invalid request schema');
   }
 
   const response = await api.get(endpoints.GetOfferPage, {
@@ -18,7 +19,7 @@ export default async (requestData) => {
   });
 
   if (!validators.responses.GetOfferPage.isValid(response.data)) {
-    throw Error('Error parsing GetOfferPage response - invalid response schema');
+    throw new errors.SchemaParsingError('Error parsing GetOfferPage response - invalid response schema');
   } else {
     return response.data;
   }

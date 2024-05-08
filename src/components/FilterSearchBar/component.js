@@ -3,7 +3,6 @@ import FilterList from '@/components/FilterSearchBar/FilterList';
 import FilterOptions from '@/components/FilterSearchBar/FilterOptions';
 
 import { mapActions } from 'vuex';
-import filter from '@/schemas/responses/examples/GetFilters.example.json';
 
 const { DateTime } = require('luxon');
 
@@ -20,13 +19,9 @@ export default {
   data() {
     return {
       destination: [],
-      // date: {
-      //   start: DateTime.now(),
-      //   end: DateTime.now().plus({ days: 3 }),
-      // },
       date: {
-        start: DateTime.fromFormat(filter.dates.start, 'dd-MM-yyyy'),
-        end: DateTime.fromFormat(filter.dates.start, 'dd-MM-yyyy').plus({ days: 3 }),
+        start: DateTime.now(),
+        end: DateTime.now().plus({ days: 3 }),
       },
       origin: [],
       participants: {},
@@ -129,8 +124,8 @@ export default {
     },
     clickReset() {
       this.date = {
-        start: DateTime.fromFormat(filter.dates.start, 'dd-MM-yyyy'),
-        end: DateTime.fromFormat(filter.dates.start, 'dd-MM-yyyy').plus({ days: 3 }),
+        start: DateTime.now(),
+        end: DateTime.now().plus({ days: 3 }),
       };
       this.$refs.origin.clearListValues();
       this.onOriginsUpdated();

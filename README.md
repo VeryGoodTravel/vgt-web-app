@@ -40,7 +40,7 @@ List of all available configuration variables is located in `.env.production`.
 
 ### Example:
 
-For variable defined in `.env.production`:
+For variable defined in `.env.build`:
 
 ```bash
 KEY=VALUE
