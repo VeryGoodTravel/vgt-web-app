@@ -11,11 +11,7 @@ export default async (requestData) => {
 
   const response = await api.get(endpoints.GetOfferPage, {
     params: {
-      origins: requestData.origins,
-      destinations: requestData.destinations,
-      dates: requestData.dates,
-      participants: requestData.participants,
-      page: requestData.page,
+      ...requestData,
     },
   });
 

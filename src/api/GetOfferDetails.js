@@ -10,7 +10,7 @@ export default async (requestData) => {
 
   const response = await api.get(endpoints.GetOfferDetails, {
     params: {
-      offer_id: requestData.id,
+      ...requestData,
     },
   });
 
