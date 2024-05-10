@@ -9,5 +9,8 @@ export default {
     dates: state.dates,
     participants: state.participants,
   }),
+  getIsSearchFilterSet: (state) => state.dates.start !== ''
+    && state.dates.end !== ''
+    && Object.keys(state.participants).length > 0,
   getFilterData: (state) => state.filterData,
 };

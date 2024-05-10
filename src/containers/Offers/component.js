@@ -23,7 +23,7 @@ export default {
     },
   },
   computed: {
-    ...mapGetters(['getPageData', 'getSearchFilter']),
+    ...mapGetters(['getPageData', 'getSearchFilter', 'getIsSearchFilterSet']),
     page: {
       get() {
         return parseInt(this.$route.params.page, 10);
@@ -51,23 +51,27 @@ export default {
     },
   },
   async beforeMount() {
-    this.setLoadingMessage('Pobieranie ofert...');
-    this.setIsLoading(true);
-    try {
-      await this.fetchPageData({ page: this.page, searchFilter: this.getSearchFilter });
-    } catch (error) {
-      if (error instanceof errors.SuccessFalseError) {
-        this.setModalComponentName('ErrorModal');
-        this.setModalComponentProps({ message: 'Nie znaleźliśmy żadnych ofert spełniających kryteria.', back: true });
-        this.setIsModalOpen(true);
-      } else {
-        this.setModalComponentName('ErrorModal');
-        this.setModalComponentProps({ message: 'System jest chwilowy niedostępny.', retry: true });
-        this.setIsModalOpen(true);
+    if (this.getIsSearchFilterSet) {
+      this.setLoadingMessage('Pobieranie ofert...');
+      this.setIsLoading(true);
+      try {
+        await this.fetchPageData({ page: this.page, searchFilter: this.getSearchFilter });
+      } catch (error) {
+        if (error instanceof errors.SuccessFalseError) {
+          this.setModalComponentName('ErrorModal');
+          this.setModalComponentProps({ message: 'Nie znaleźliśmy żadnych ofert spełniających kryteria.', back: true });
+          this.setIsModalOpen(true);
+        } else {
+          this.setModalComponentName('ErrorModal');
+          this.setModalComponentProps({ message: 'System jest chwilowy niedostępny.', retry: true });
+          this.setIsModalOpen(true);
+        }
+      } finally {
+        this.setIsLoading(false);
+        this.clearLoadingMessage();
       }
-    } finally {
-      this.setIsLoading(false);
-      this.clearLoadingMessage();
+    } else {
+      this.$router.routeBack(this.$router);
     }
   },
 };
