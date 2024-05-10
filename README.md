@@ -36,7 +36,7 @@ yarn lint
 
 Configure application by setting environmental variables in Docker.
 
-List of all available configuration variables is located in `.env.production`.
+List of all available configuration variables is located in `.env.build`.
 
 ### Example:
 

@@ -5,6 +5,11 @@ export default {
   props: {
     message: String,
   },
+  computed: {
+    modalMessage() {
+      return this.message && this.message !== '' ? this.message : 'Transakcja nie powiodła się';
+    },
+  },
   methods: {
     ...mapActions(['setIsModalOpen', 'clearModalComponent']),
     clickOK() {

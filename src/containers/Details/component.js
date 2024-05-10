@@ -94,10 +94,27 @@ export default {
           login: this.getLogin,
           token: this.getToken,
         };
-        const response = await api.PurchaseOffer(requestData);
-        this.setIsLoading(false);
-        this.clearLoadingMessage();
-        if (!response.success) {
+
+        let response = null;
+        try {
+          response = await api.PurchaseOffer(requestData);
+        } catch (error) {
+          if (error instanceof errors.SuccessFalseError) {
+            this.setModalComponentProps({});
+            this.setModalComponentName('PurchaseFailureModal');
+            this.setIsModalOpen(true);
+          } else {
+            this.setModalComponentName('ErrorModal');
+            this.setModalComponentProps({ message: 'System jest chwilowy niedostępny.', retry: true });
+            this.setIsModalOpen(true);
+          }
+          return;
+        } finally {
+          this.setIsLoading(false);
+          this.clearLoadingMessage();
+        }
+
+        if (response && response.success) {
           this.setModalComponentName('PurchaseSuccessModal');
           this.setIsModalOpen(true);
         } else {

@@ -1,7 +1,7 @@
 <template>
   <div class="PurchaseFailureModal">
     <span class="PurchaseFailureModal__message">
-      {{ message }}
+      {{ modalMessage }}
     </span>
     <button class="PurchaseFailureModal__button hover" type="submit" @click="clickOK">
       OK
