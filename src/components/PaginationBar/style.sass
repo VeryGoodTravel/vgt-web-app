@@ -1,0 +1,35 @@
+.PaginationBar
+    display: flex
+    flex-direction: row
+    justify-content: center
+    align-items: center
+    gap: 0.75rem
+
+    &__button
+        min-width: 3rem
+        height: 3rem
+        color: $color__light--1
+        font-size: 1.5rem
+        line-height: 1.5rem
+        font-weight: 600
+        background: none
+        border: 0.2rem solid $color__light--1
+        border-radius: 3rem
+
+.ellipsis
+    border: none
+    line-height: 0
+    padding: 0 0
+    padding-bottom: 1rem
+    filter: brightness(100%)
+
+    &:hover
+        filter: unset
+
+.selected
+    background-color: $color__light--1
+    color: $color__dark--1
+    filter: brightness(100%)
+
+    &:hover
+        filter: unset

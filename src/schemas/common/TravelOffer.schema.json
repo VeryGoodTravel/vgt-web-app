@@ -1,0 +1,66 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "/schemas/common/TravelOffer.schema.json",
+  "title": "TravelOffer",
+  "description": "Describes single tour offer.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "origin": {
+      "$ref": "/schemas/common/TravelLocation.schema.json"
+    },
+    "destination": {
+      "$ref": "/schemas/common/TravelLocation.schema.json"
+    },
+    "date": {
+      "$ref": "/schemas/common/TravelDateRange.schema.json"
+    },
+    "price": {
+      "description": "Price for entire offer, not per person",
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "number",
+          "minimum": 0.0
+        },
+        "currency": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "value",
+        "currency"
+      ]
+    },
+    "room": {
+      "type": "string"
+    },
+    "transportation": {
+      "type": "string"
+    },
+    "maintenance": {
+      "type": "string"
+    },
+    "rating": {
+      "description": "If not provided, defaults to 0.0",
+      "type": "number",
+      "minimum": 0.0,
+      "maximum": 5.0
+    },
+    "image": {
+      "$ref": "/schemas/common/TravelImage.schema.json"
+    }
+  },
+  "required": [
+    "id",
+    "origin",
+    "destination",
+    "date",
+    "price"
+  ]
+}

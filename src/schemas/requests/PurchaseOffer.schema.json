@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "/schemas/requests/PurchaseOffer.schema.json",
+  "title": "PurchaseOffer",
+  "description": "Request to buy specific offer by a user.",
+  "type": "object",
+  "properties": {
+    "offer_id": {
+      "type": "string"
+    },
+    "login": {
+      "type": "string"
+    },
+    "token": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_-]{2,}(?:\\.[A-Za-z0-9_-]{2,}){2}$"
+    }
+  },
+  "required": [
+    "offer_id",
+    "login",
+    "token"
+  ]
+}

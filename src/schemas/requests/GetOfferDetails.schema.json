@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "/schemas/requests/GetOfferDetails.schema.json",
+  "title": "GetOfferDetails",
+  "description": "Request to get details of specific offer by id.",
+  "type": "object",
+  "properties": {
+    "offer_id": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "offer_id"
+  ]
+}

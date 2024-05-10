@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "/schemas/responses/PurchaseOffer.schema.json",
+  "title": "PurchaseOffer",
+  "description": "Describes data returned on successful offer purchase.",
+  "type": "object",
+  "properties": {
+    "success": {
+      "description": "Information whether transaction was successful.",
+      "type": "boolean"
+    },
+    "message": {
+      "description": "Description why transaction failed.",
+      "type": "string"
+    }
+  },
+  "required": [
+    "success"
+  ]
+}

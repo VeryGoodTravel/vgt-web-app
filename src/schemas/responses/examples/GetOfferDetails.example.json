@@ -1,0 +1,26 @@
+{
+  "id": "1",
+  "name": "Park Plaza Westminster Bridge London",
+  "origin": {
+    "id": "1",
+    "label": "Warszawa"
+  },
+  "destination": {
+    "id": "2",
+    "label": "Londyn"
+  },
+  "date": {
+    "start": "01-04-2024",
+    "end": "04-04-2024"
+  },
+  "price": {
+    "value": 300.0,
+    "currency": "zł"
+  },
+  "room": "Studio standard",
+  "transportation": "Samolot",
+  "maintenance": "All Inclusive",
+  "rating": 4.4,
+  "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAIAQMAAAD+wSzIAAAABlBMVEX///+/v7+jQ3Y5AAAADklEQVQI12P4AIX8EAgALgAD/aNpbtEAAAAASUVORK5CYII",
+  "availability": true
+}

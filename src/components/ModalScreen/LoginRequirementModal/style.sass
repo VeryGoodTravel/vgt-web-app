@@ -1,0 +1,38 @@
+.LoginRequirementModal
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    gap: 1rem
+    width: min-content
+    padding: 1rem
+    border: 0.2rem solid $color__light--1
+    border-radius: 1rem
+
+    &__message
+        text-align: center
+        font-size: 2rem
+        line-height: 2rem
+        font-weight: 600
+
+    &__combo
+        display: flex
+        flex-direction: row
+        justify-content: space-evenly
+        align-items: center
+        gap: 1rem
+        width: 100%
+
+        &--button
+            font-size: 1.5rem
+            line-height: 1.5rem
+            font-weight: 600
+            background-color: $color__dark--1
+            color: $color__light--1
+            border: 0.2rem solid $color__light--1
+            border-radius: 0.5rem
+            padding: 0.25rem 0.75rem
+
+            &[type="submit"]
+                background-color: $color__light--1
+                color: $color__dark--1

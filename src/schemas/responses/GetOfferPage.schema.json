@@ -1,0 +1,42 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "/schemas/responses/GetOfferPage.schema.json",
+  "title": "GetOfferPage",
+  "description": "Contains page of offers, including meta-data about all available pages.",
+  "type": "object",
+  "properties": {
+    "pages": {
+      "description": "Meta-data regarding pagination.",
+      "type": "object",
+      "properties": {
+        "total": {
+          "description": "Total amount of offers on all pages (not an amount of available pages)",
+          "type": "integer",
+          "minimum": 0
+        },
+        "page": {
+          "description": "Page number",
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "required": [
+        "total",
+        "page"
+      ]
+    },
+    "offers": {
+      "description": "List of tour offerts",
+      "type": "array",
+      "items": {
+        "$ref": "/schemas/common/TravelOffer.schema.json"
+      },
+      "minItems": 0,
+      "uniqueItems": false
+    }
+  },
+  "required": [
+    "pages",
+    "offers"
+  ]
+}

@@ -1,0 +1,19 @@
+services:
+  web:
+    container_name: vgt-web-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - mode=development
+    ports:
+      - 2137:80
+    env_file:
+      - .env.development
+    networks:
+      - vgt-network
+
+networks:
+  vgt-network:
+    name: vgt-network
+    external: true
