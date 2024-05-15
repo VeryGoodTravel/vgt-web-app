@@ -1,5 +1,5 @@
 <template>
-  <details class="FilterListItem">
+  <details class="FilterListItem" :class="{ 'Leaf': !hasSubitems, 'Root': hasSubitems }">
     <summary class="FilterListItem__item">
       <input class="FilterListItem__item--checkbox" type="checkbox" ref="checkbox" @click="handleItemClick" />
       <span class="FilterListItem__item--label">{{ item.label }}</span>
