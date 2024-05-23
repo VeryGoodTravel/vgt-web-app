@@ -14,6 +14,6 @@ COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 COPY --from=build-stage /app/dist /usr/share/nginx/html
 COPY ./entrypoint.sh /entrypoint.sh
-EXPOSE 80
+# EXPOSE 80
 RUN chmod +x /entrypoint.sh
 ENTRYPOINT [ "sh", "/entrypoint.sh" ]
