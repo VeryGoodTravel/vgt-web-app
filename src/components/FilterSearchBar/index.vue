@@ -36,7 +36,9 @@
       <img class="FilterSearchBar__reset-image hover" :src="resetIcon" @click="clickReset" />
     </div>
     <div class="FilterSearchBar__search">
-      <img class="FilterSearchBar__search-image hover" :src="searchIcon" @click="clickSearch" />
+      <button class="FilterSearchBar__search-button hover" :disabled="!allowSearch" @click="clickSearch">
+        <img class="FilterSearchBar__search-button-image" :src="searchIcon" />
+      </button>
     </div>
   </div>
 </template>
