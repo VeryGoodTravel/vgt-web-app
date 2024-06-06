@@ -8,7 +8,7 @@ export default async (requestData) => {
     throw new errors.SchemaParsingError('Error sending PurchaseOffer request - invalid request schema');
   }
 
-  const response = await api.post(endpoints.PurchaseOffer, requestData);
+  const response = await api.post(endpoints.PurchaseOffer, requestData, { timeout: process.env.VUE_APP_API_PURCHASE_TIMEOUT });
 
   if (!validators.responses.PurchaseOffer.isValid(response.data)) {
     throw new errors.SchemaParsingError('Error parsing PurchaseOffer response - invalid response schema');
