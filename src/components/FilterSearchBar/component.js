@@ -38,9 +38,12 @@ export default {
     searchIcon() {
       return require('@/assets/search.svg');
     },
+    allowSearch() {
+      return this.destination.length && this.origin.length;
+    },
     destinationSelection() {
       if (this.destination.length === 0) {
-        return 'Gdziekolwiek';
+        return 'Wybierz miejsca wylotu';
       } else if (this.destination.length > 1) {
         return this.destination.length <= 4
           ? `Wybrano ${this.destination.length} lokalizacje`
@@ -58,7 +61,7 @@ export default {
     },
     originSelection() {
       if (this.origin.length === 0) {
-        return 'Skądkolwiek';
+        return 'Wybierz miejsca wycieczki';
       } else if (this.origin.length > 1) {
         return this.origin.length <= 4
           ? `Wybrano ${this.origin.length} lokalizacje`
