@@ -1,0 +1,38 @@
+.PopularDirections
+    width: 100%
+    max-width: 90rem
+    display: flex
+    flex-direction: column
+    justify-content: flex-start
+    align-items: center
+    gap: 2rem
+
+    &__title
+        display: flex
+        flex-direction: row
+        justify-content: flex-start
+        align-content: center
+        width: 100%
+        margin: 0
+        padding: 0
+        font-size: 2.25rem
+        line-height: 2.25rem
+
+    &__content
+        width: 100%
+        display: grid
+        grid-template-columns: repeat(4, 1fr)
+        grid-template-rows: auto
+        justify-items: center
+        align-items: center
+        gap: 2rem
+
+        &--direction
+            font-size: 1.5rem
+            line-height: 1.5rem
+            font-weight: 600
+            background-color: $color__light--1
+            color: $color__dark--1
+            border: 0.2rem solid $color__light--1
+            border-radius: 0.5rem
+            padding: 0.25rem 0.75rem

@@ -13,6 +13,12 @@ export default {
     emitListUpdate() {
       this.$emit('listUpdate');
     },
+    setListValues(ids) {
+      this.clearListValues();
+      this.$refs.items.forEach((item) => {
+        item.setItemValue(ids);
+      });
+    },
     getListValues() {
       return this.$refs.items.reduce((acc, val) => {
         const value = val.getItemValue();

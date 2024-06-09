@@ -13,6 +13,11 @@
     "availability": {
       "description": "Availability of an offer, whether it can be purchased.",
       "type": "boolean"
+    },
+    "recentlyPurchased": {
+      "description": "Statistic to show how many people bought related offer.",
+      "type": "integer",
+      "minimum": 0
     }
   },
   "required": [

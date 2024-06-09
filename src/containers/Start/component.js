@@ -4,28 +4,35 @@ import errors from '@/api/errors';
 
 import LoginBar from '@/components/LoginBar';
 import FilterSearchBar from '@/components/FilterSearchBar';
+import PopularDirections from '@/components/PopularDirections';
 
 export default {
   name: 'Start',
   components: {
     LoginBar,
     FilterSearchBar,
+    PopularDirections,
   },
   computed: {
-    ...mapGetters(['getAppTitle', 'getFilterData']),
+    ...mapGetters(['getAppTitle', 'getFilterData', 'getPopularDirections']),
     logo() {
       return require('@/assets/logo.svg');
     },
   },
   methods: {
-    ...mapActions(['fetchFilterData',
+    ...mapActions(['fetchFilterData', 'fetchPopularStatistics',
       'setIsLoading', 'setLoadingMessage', 'clearLoadingMessage',
       'setIsModalOpen', 'setModalComponentName', 'setModalComponentProps',
     ]),
+    handlePopularDirectionSelected(origin, destination) {
+      this.$refs.searchBar.setOriginsValues([origin]);
+      this.$refs.searchBar.setDestinationValues([destination]);
+    },
   },
   async beforeMount() {
     this.setLoadingMessage('Pobieranie dostępnych lokalizacji...');
     this.setIsLoading(true);
+    this.fetchPopularStatistics();
     try {
       await this.fetchFilterData();
     } catch (error) {

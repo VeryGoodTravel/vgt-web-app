@@ -2,6 +2,9 @@
   <div class="Details">
     <nav class="Details__nav">
       <button class="Details__nav--button hover" @click="clickBack">➔</button>
+      <div v-if="offerDetails" class="Details__nav--info">
+        <span class="Details__nav--info-text">{{ recentlyPurchasedInfo }}</span>
+      </div>
       <LoginBar />
     </nav>
     <div class="Details__content" v-if="offerDetails">

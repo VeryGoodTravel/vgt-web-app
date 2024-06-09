@@ -71,6 +71,15 @@ export default {
       nightLabel = duration === 1 ? 'noc' : nightLabel;
       return `${duration + 1} ${daysLabel} / ${duration} ${nightLabel}`;
     },
+    recentlyPurchasedInfo() {
+      if (!this.offerDetails.recentlyPurchased || this.offerDetails.recentlyPurchased === 0) {
+        return '';
+      } else {
+        return this.offerDetails.recentlyPurchased === 1
+          ? `POPULARNA OFERTA! ${this.offerDetails.recentlyPurchased} klient zarezerwował pokój w tym hotelu!`
+          : `POPULARNA OFERTA! ${this.offerDetails.recentlyPurchased} klientów zarezerwowało pokój w tym hotelu!`;
+      }
+    },
   },
   methods: {
     ...mapActions(['fetchOfferDetails',
@@ -87,7 +96,7 @@ export default {
     },
     async clickPurchase() {
       if (this.getIsLoggedIn) {
-        this.setLoadingMessage('Rezerwowanie oferty..');
+        this.setLoadingMessage('Rezerwowanie oferty...');
         this.setIsLoading(true);
         const requestData = {
           offer_id: this.offerDetails.id,
