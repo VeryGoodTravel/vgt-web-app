@@ -12,8 +12,8 @@ export default {
   async fetchPopularStatistics({ commit }) {
     try {
       const response = await api.GetPopularOffers();
-      commit(types.SET_POPULAR_DIRECTIONS, response.popular_directions);
-      commit(types.SET_POPULAR_ACCOMMODATIONS, response.popular_accommodations);
+      commit(types.SET_POPULAR_DIRECTIONS, response.directions);
+      commit(types.SET_POPULAR_ACCOMMODATIONS, response.accommodations);
     } catch {
       // ignore any errors
     }
