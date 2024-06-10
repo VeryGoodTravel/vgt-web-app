@@ -1,4 +1,4 @@
 export default {
   getPopularDirections: (state) => state.popularDirections,
-  getPopularAccomodations: (state) => state.popularAccomodations,
+  getPopularAccommodations: (state) => state.popularAccommodations,
 };

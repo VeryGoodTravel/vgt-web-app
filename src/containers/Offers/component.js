@@ -5,7 +5,7 @@ import errors from '@/api/errors';
 import LoginBar from '@/components/LoginBar';
 import PaginationBar from '@/components/PaginationBar';
 import OfferCard from '@/components/OfferCard';
-import PopularAccomodations from '@/components/PopularAccomodations';
+import PopularAccommodations from '@/components/PopularAccommodations';
 
 export default {
   name: 'Offers',
@@ -13,7 +13,7 @@ export default {
     LoginBar,
     PaginationBar,
     OfferCard,
-    PopularAccomodations,
+    PopularAccommodations,
   },
   watch: {
     async page(newPage, _) {
@@ -25,7 +25,7 @@ export default {
     },
   },
   computed: {
-    ...mapGetters(['getPageData', 'getSearchFilter', 'getIsSearchFilterSet', 'getPopularAccomodations']),
+    ...mapGetters(['getPageData', 'getSearchFilter', 'getIsSearchFilterSet', 'getPopularAccommodations']),
     page: {
       get() {
         return parseInt(this.$route.params.page, 10);

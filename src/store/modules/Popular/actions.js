@@ -6,14 +6,14 @@ export default {
   setPopularDirections({ commit }, value) {
     commit(types.SET_POPULAR_DIRECTIONS, value);
   },
-  setPopularAccomodations({ commit }, value) {
-    commit(types.SET_POPULAR_ACCOMODATIONS, value);
+  setPopularAccommodations({ commit }, value) {
+    commit(types.SET_POPULAR_ACCOMMODATIONS, value);
   },
   async fetchPopularStatistics({ commit }) {
     try {
       const response = await api.GetPopularOffers();
       commit(types.SET_POPULAR_DIRECTIONS, response.popular_directions);
-      commit(types.SET_POPULAR_ACCOMODATIONS, response.popular_accomodations);
+      commit(types.SET_POPULAR_ACCOMMODATIONS, response.popular_accommodations);
     } catch {
       // ignore any errors
     }
@@ -21,7 +21,7 @@ export default {
   clearPopularDirections({ commit }) {
     commit(types.SET_POPULAR_DIRECTIONS, []);
   },
-  clearPopularAccomodations({ commit }) {
-    commit(types.SET_POPULAR_ACCOMODATIONS, []);
+  clearPopularAccommodations({ commit }) {
+    commit(types.SET_POPULAR_ACCOMMODATIONS, []);
   },
 };

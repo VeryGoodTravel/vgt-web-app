@@ -26,7 +26,7 @@
       "minItems": 0,
       "maxItems": 12
     },
-    "popular_accomodations": {
+    "popular_accommodations": {
       "type": "array",
       "items": {
         "type": "object",
@@ -68,6 +68,6 @@
   },
   "required": [
     "popular_directions",
-    "popular_accomodations"
+    "popular_accommodations"
   ]
 }

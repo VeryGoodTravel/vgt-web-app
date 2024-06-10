@@ -1,12 +1,12 @@
 import StarBar from '@/components/OfferCard/StarBar';
 
 export default {
-  name: 'PopularAccomodations',
+  name: 'PopularAccommodations',
   components: {
     StarBar,
   },
   props: {
-    accomodationsData: Array,
+    accommodationsData: Array,
   },
   data() {
     return {
@@ -23,8 +23,8 @@ export default {
     maintenanceIcon() {
       return require('@/assets/maintenance.svg');
     },
-    accomodations() {
-      return this.accomodationsData.slice(0, 12).map((element, index) => ({
+    accommodations() {
+      return this.accommodationsData.slice(0, 12).map((element, index) => ({
         id: index,
         destination: element.destination.label,
         name: element.name,
@@ -38,7 +38,7 @@ export default {
       return 0;
     },
     max() {
-      return this.accomodations.length - 1;
+      return this.accommodations.length - 1;
     },
     canSwipeLeft() {
       return this.page > this.min;
