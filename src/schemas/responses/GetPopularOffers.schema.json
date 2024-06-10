@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "/schemas/common/GetPopularOffers.schema.json",
+  "$id": "/schemas/responses/GetPopularOffers.schema.json",
   "title": "GetPopularOffers",
   "description": "Contains all statistics regarding popular travel destinations.",
   "type": "object",
