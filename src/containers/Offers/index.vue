@@ -6,6 +6,8 @@
         v-model:page="page" />
       <LoginBar class="Offers__nav--login" />
     </nav>
+    <PopularAccommodations :accommodationsData="getPopularAccommodations"
+      v-if="getPopularAccommodations && getPopularAccommodations.length" />
     <div class="Offers__list" v-if="pageData">
       <OfferCard v-for="offer in pageData.offers" :key="offer.id" :offer="offer" />
     </div>

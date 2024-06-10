@@ -2,6 +2,7 @@ const EnvelopeExample = require('../src/schemas/envelope/Envelope.example.json')
 const GetFiltersExample = require('../src/schemas/responses/examples/GetFilters.example.json');
 const GetOfferPageExample = require('../src/schemas/responses/examples/GetOfferPage.example.json');
 const GetOfferDetailsExample = require('../src/schemas/responses/examples/GetOfferDetails.example.json');
+const GetPopularOffersExample = require('../src/schemas/responses/examples/GetPopularOffers.example.json');
 const PurchaseOfferExample = require('../src/schemas/responses/examples/PurchaseOffer.example.json');
 const LoginExample = require('../src/schemas/responses/examples/Login.example.json');
 
@@ -16,6 +17,7 @@ module.exports = () => ({
   GetFilters: wrappedResponse(GetFiltersExample),
   GetOfferPage: wrappedResponse(GetOfferPageExample),
   GetOfferDetails: wrappedResponse(GetOfferDetailsExample),
+  GetPopularOffers: wrappedResponse(GetPopularOffersExample),
   PurchaseOffer: wrappedResponse(PurchaseOfferExample),
   Login: wrappedResponse(LoginExample),
 });

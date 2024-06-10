@@ -1,0 +1,27 @@
+{
+  "popular_directions": [
+    {
+      "origin": {
+        "id": "2",
+        "label": "Warszawa"
+      },
+      "destination": {
+        "id": "4",
+        "label": "Londyn"
+      }
+    }
+  ],
+  "popular_accommodations": [
+    {
+      "destination": {
+        "id": "4",
+        "label": "Londyn"
+      },
+      "name": "Park Plaza Westminster Bridge London",
+      "room": "Studio standard",
+      "transportation": "Samolot",
+      "maintenance": "All Inclusive",
+      "rating": 4.4
+    }
+  ]
+}

@@ -43,6 +43,16 @@ export default {
     emitItemUpdate() {
       this.$emit('itemUpdate');
     },
+    setItemValue(ids) {
+      if (ids.includes(this.item.id)) {
+        this.$refs.checkbox.checked = true;
+        this.handleItemClick();
+      } else if (this.item.locations) {
+        this.$refs.items.forEach((item) => {
+          item.setItemValue(ids);
+        });
+      }
+    },
     getItemValue() {
       if (this.item.locations) {
         return this.$refs.items.reduce((acc, val) => {

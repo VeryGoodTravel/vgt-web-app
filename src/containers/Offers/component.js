@@ -5,6 +5,7 @@ import errors from '@/api/errors';
 import LoginBar from '@/components/LoginBar';
 import PaginationBar from '@/components/PaginationBar';
 import OfferCard from '@/components/OfferCard';
+import PopularAccommodations from '@/components/PopularAccommodations';
 
 export default {
   name: 'Offers',
@@ -12,6 +13,7 @@ export default {
     LoginBar,
     PaginationBar,
     OfferCard,
+    PopularAccommodations,
   },
   watch: {
     async page(newPage, _) {
@@ -23,7 +25,7 @@ export default {
     },
   },
   computed: {
-    ...mapGetters(['getPageData', 'getSearchFilter', 'getIsSearchFilterSet']),
+    ...mapGetters(['getPageData', 'getSearchFilter', 'getIsSearchFilterSet', 'getPopularAccommodations']),
     page: {
       get() {
         return parseInt(this.$route.params.page, 10);
@@ -42,7 +44,7 @@ export default {
     },
   },
   methods: {
-    ...mapActions(['fetchPageData',
+    ...mapActions(['fetchPageData', 'fetchPopularStatistics',
       'setIsLoading', 'setLoadingMessage', 'clearLoadingMessage',
       'setIsModalOpen', 'setModalComponentName', 'setModalComponentProps',
     ]),
@@ -54,6 +56,7 @@ export default {
     if (this.getIsSearchFilterSet) {
       this.setLoadingMessage('Pobieranie ofert...');
       this.setIsLoading(true);
+      this.fetchPopularStatistics();
       try {
         await this.fetchPageData({ page: this.page, searchFilter: this.getSearchFilter });
       } catch (error) {

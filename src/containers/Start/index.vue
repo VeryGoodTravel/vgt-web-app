@@ -9,7 +9,11 @@
         <h1 class="Start__content--title-text">{{ getAppTitle }}</h1>
       </div>
       <div class="Start__content--search-bar">
-        <FilterSearchBar :filterData="getFilterData" v-if="getFilterData"/>
+        <FilterSearchBar :filterData="getFilterData" v-if="getFilterData" ref="searchBar"/>
+      </div>
+      <div class="Start__content--popular-directions">
+        <PopularDirections :directionsData="getPopularDirections" v-if="getPopularDirections"
+          @popularDirectionSelected="handlePopularDirectionSelected"/>
       </div>
     </div>
   </div>

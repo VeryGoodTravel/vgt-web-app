@@ -169,6 +169,12 @@ export default {
     onParticipantsUpdated() {
       this.participants = this.$refs.participant.getOptionsValues();
     },
+    setOriginsValues(ids) {
+      this.$refs.origin.setListValues(ids);
+    },
+    setDestinationValues(ids) {
+      this.$refs.destination.setListValues(ids);
+    },
   },
   beforeMount() {
     this.clearSearchFilter();

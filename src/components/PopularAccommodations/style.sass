@@ -1,0 +1,100 @@
+.PopularAccommodations
+    position: relative
+    box-sizing: border-box
+    height: 13rem
+    padding: 1rem
+    border: 0.2rem solid $color__light--1
+    border-radius: 0.8rem
+    background-color: $color__dark--1
+    color: $color__light--1
+
+    &__title
+        position: absolute
+        top: -2rem
+        left: 0
+        transform: translateY(-50%)
+        margin: 0
+        padding: 0
+        font-size: 2rem
+        line-height: 2rem
+
+    &__button
+        position: absolute
+        top: 50%
+        transform: translateY(-50%)
+        height: 3rem
+        width: 1.75rem
+        padding: 0
+        margin: 0
+        font-size: 1.5rem
+        line-height: 1.5rem
+        font-weight: 800
+        background-color: $color__light--1
+        color: $color__dark--1
+        border: 0.2rem solid $color__light--1
+        z-index: 999
+
+    .left
+        left: 0
+        border-radius: 0 1.5rem 1.5rem 0
+        padding-right: 0.5rem
+
+    .right
+        right: 0
+        border-radius: 1.5rem 0 0 1.5rem
+        padding-left: 0.5rem
+
+    &__card
+        display: flex
+        flex-direction: column
+        justify-content: flex-start
+        align-items: center
+        gap: 1rem
+        width: 100%
+
+        &--row
+            display: flex
+            flex-direction: row
+            justify-content: space-between
+            align-items: center
+            gap: 1rem
+            width: 100%
+
+            &-name
+                white-space: nowrap
+                font-weight: 600
+                font-size: 1.5rem
+                line-height: 1.5rem
+                margin: 0
+                padding: 0
+
+            &-column
+                display: flex
+                flex-direction: column
+                justify-content: flex-start
+                align-items: flex-start
+                align-self: flex-start
+                height: 100%
+                padding: 0 1rem
+
+                &-destination
+                    font-size: 1.5rem
+                    line-height: 1.5rem
+                    font-weight: 600
+                    background-color: $color__light--1
+                    color: $color__dark--1
+                    border: 0.2rem solid $color__light--1
+                    border-radius: 0.5rem
+                    padding: 0.25rem 0.75rem
+
+                &-detail
+                    height: 1.25rem
+                    font-size: 1.25rem
+                    line-height: 1.25rem
+
+                    & > img
+                        display: inline
+                        vertical-align: bottom
+                        height: 100%
+                        aspect-ratio: 1 / 1
+                        filter: invert(1) brightness(0.95)
