@@ -1,5 +1,5 @@
 {
-  "popular_directions": [
+  "directions": [
     {
       "origin": {
         "id": "2",
@@ -11,7 +11,7 @@
       }
     }
   ],
-  "popular_accommodations": [
+  "accommodations": [
     {
       "destination": {
         "id": "4",
