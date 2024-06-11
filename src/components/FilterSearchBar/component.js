@@ -43,7 +43,7 @@ export default {
     },
     destinationSelection() {
       if (this.destination.length === 0) {
-        return 'Wybierz miejsca wylotu';
+        return 'Wybierz miejsca wycieczki';
       } else if (this.destination.length > 1) {
         return this.destination.length <= 4
           ? `Wybrano ${this.destination.length} lokalizacje`
@@ -61,7 +61,7 @@ export default {
     },
     originSelection() {
       if (this.origin.length === 0) {
-        return 'Wybierz miejsca wycieczki';
+        return 'Wybierz miejsca wylotu';
       } else if (this.origin.length > 1) {
         return this.origin.length <= 4
           ? `Wybrano ${this.origin.length} lokalizacje`
