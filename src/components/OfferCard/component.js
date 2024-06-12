@@ -20,6 +20,16 @@ export default {
     maintenanceIcon() {
       return require('@/assets/maintenance.svg');
     },
+    origin() {
+      return this.offer.origin.locations && this.offer.origin.locations[0]
+        ? this.offer.origin.locations[0].label
+        : this.offer.origin.label;
+    },
+    destination() {
+      return this.offer.destination.locations && this.offer.destination.locations[0]
+        ? this.offer.destination.locations[0].label
+        : this.offer.destination.label;
+    },
     thumbnail() {
       return this.offer.image;
     },

@@ -11,9 +11,9 @@
         </div>
         <div class="OfferCard__info--header-row">
           <div class="OfferCard__info--header-row-combo">
-            <span>{{ offer.origin.label }}</span>
+            <span>{{ origin }}</span>
             <span class="OfferCard__info--header-row-combo-arrow">➔</span>
-            <span>{{ offer.destination.label }}</span>
+            <span>{{ destination }}</span>
           </div>
           <div class="OfferCard__info--header-row-combo">
             <span>{{ dateStart }}</span>
