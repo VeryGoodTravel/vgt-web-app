@@ -51,10 +51,14 @@ export default {
       return `${this.offerDetails.price.value.toFixed(2)} ${this.offerDetails.price.currency}`;
     },
     origin() {
-      return this.offerDetails.origin.label;
+      return this.offerDetails.origin.locations && this.offerDetails.origin.locations[0]
+        ? this.offerDetails.origin.locations[0].label
+        : this.offerDetails.origin.label;
     },
     destination() {
-      return this.offerDetails.destination.label;
+      return this.offerDetails.destination.locations && this.offerDetails.destination.locations[0]
+        ? this.offerDetails.destination.locations[0].label
+        : this.offerDetails.destination.label;
     },
     dateStart() {
       return DateTime.fromFormat(this.offerDetails.date.start, 'dd-MM-yyyy').toFormat('dd.MM.yyyy');

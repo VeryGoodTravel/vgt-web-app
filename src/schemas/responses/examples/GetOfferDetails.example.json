@@ -3,11 +3,23 @@
   "name": "Park Plaza Westminster Bridge London",
   "origin": {
     "id": "1",
-    "label": "Warszawa"
+    "label": "Polska",
+    "locations": [
+      {
+        "id": "2",
+        "label": "Warszawa"
+      }
+    ]
   },
   "destination": {
-    "id": "2",
-    "label": "Londyn"
+    "id": "3",
+    "label": "Wielka Brytania",
+    "locations": [
+      {
+        "id": "4",
+        "label": "Londyn"
+      }
+    ]
   },
   "date": {
     "start": "01-04-2024",
