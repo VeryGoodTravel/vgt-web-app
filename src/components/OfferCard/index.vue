@@ -1,7 +1,7 @@
 <template>
   <div class="OfferCard">
-    <div class="OfferCard__info">
-      <img class="OfferCard__image" v-if="thumbnail" :src="thumbnail">
+    <div class="OfferCard__image">
+      <img v-if="thumbnail" :src="thumbnail">
     </div>
     <div class="OfferCard__info">
       <div class="OfferCard__info--header">

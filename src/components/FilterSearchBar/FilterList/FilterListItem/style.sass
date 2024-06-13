@@ -1,5 +1,6 @@
 $SIZE: 1.75rem
 $GAP: 0.25rem
+$MARGIN: 0.1rem
 
 .FilterListItem
     width: 100%
@@ -13,8 +14,9 @@ $GAP: 0.25rem
         transform: rotate(90deg)
 
     &__item
-        display: flex
-        flex-direction: row
+        display: grid
+        grid-template-columns: calc($SIZE + 2 * $MARGIN) 1fr calc($SIZE + 2 * $MARGIN)
+        grid-template-rows: auto
         align-items: center
         gap: $GAP
 
@@ -24,6 +26,7 @@ $GAP: 0.25rem
         &--checkbox
             width: $SIZE
             height: $SIZE
+            margin: $MARGIN
             accent-color: $color__light--1
             cursor: pointer
 
@@ -33,6 +36,7 @@ $GAP: 0.25rem
             box-sizing: border-box
             width: $SIZE
             height: $SIZE
+            margin: $MARGIN
             padding: $GAP
             filter: hue-rotate(240), saturate(5%)
 
