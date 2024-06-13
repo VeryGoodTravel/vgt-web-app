@@ -8,11 +8,7 @@ export default async (requestData) => {
     throw new errors.SchemaParsingError('Error sending GetOfferPage request - invalid request schema');
   }
 
-  const response = await api.get(endpoints.GetOfferPage, {
-    params: {
-      ...requestData,
-    },
-  });
+  const response = await api.post(endpoints.GetOfferPage, requestData);
 
   if (!validators.responses.GetOfferPage.isValid(response.data)) {
     throw new errors.SchemaParsingError('Error parsing GetOfferPage response - invalid response schema');
