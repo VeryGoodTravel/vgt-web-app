@@ -6,15 +6,22 @@
     gap: 0.75rem
 
     &__button
-        min-width: 3rem
+        position: relative
+        width: 3rem
         height: 3rem
         color: $color__light--1
-        font-size: 1.5rem
-        line-height: 1.5rem
+        font-size: 1.4rem
+        line-height: 1.4rem
         font-weight: 600
         background: none
         border: 0.2rem solid $color__light--1
         border-radius: 3rem
+
+        &--text
+            position: absolute
+            top: 50%
+            left: 50%
+            transform: translate(-50%,-50%)
 
 .ellipsis
     border: none

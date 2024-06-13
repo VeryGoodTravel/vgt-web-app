@@ -12,7 +12,7 @@
         <FilterSearchBar :filterData="getFilterData" v-if="getFilterData" ref="searchBar"/>
       </div>
       <div class="Start__content--popular-directions">
-        <PopularDirections :directionsData="getPopularDirections" v-if="getPopularDirections"
+        <PopularDirections :directionsData="getPopularDirections" v-if="getPopularDirections && getPopularDirections.length"
           @popularDirectionSelected="handlePopularDirectionSelected"/>
       </div>
     </div>
