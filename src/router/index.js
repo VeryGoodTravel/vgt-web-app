@@ -9,7 +9,7 @@ const router = createRouter({
 
 router.routeBack = (r) => {
   const previous = r.options.history.state.back;
-  if (/^\/offers\/[0-9]+$/.test(previous) || /^\/details\/[a-zA-Z0-9-_]+$/.test(previous)) {
+  if (/^\/offers\/[0-9]+$/.test(previous) || /^\/details\/((\S+)|(\$))+$/.test(previous)) {
     r.back();
   } else {
     r.push({ name: 'Start' });
